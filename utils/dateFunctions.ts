@@ -1,4 +1,5 @@
 import { globalParameters } from "./globalParameters.ts";
+import { DateRange } from "./commonInterfaces.ts";
 const { utc, detectionStartTime, detectionFinishTime } = globalParameters
 
 export function dataToStdFormat(eventsArray: any[]): any[] {
@@ -50,11 +51,6 @@ export const dateInFormat = (date: Date): string => {
   const formattedDate = `${year}${month}${day}T${hours}${minutes}${seconds}`;
   return formattedDate;
 };
-
-interface DateRange {
-  initDate: string;
-  finishDate: string;
-}
 
 export const getIntervalDate = (date: Date): DateRange => {
   // returns the day interval between the processing will be done

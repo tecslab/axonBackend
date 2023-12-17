@@ -1,13 +1,9 @@
 import { globalParameters } from "./globalParameters.ts";
 import { dataToStdFormat } from "./dateFunctions.ts";
+import { DateRange } from "./commonInterfaces.ts";
 
 const {axxonOneServer, axxonOnePort, prefix, user,
 password, vEntranceCamera, detectionStartTime, detectionFinishTime} = globalParameters
-
-interface DateRange {
-  initDate: string;
-  finishDate: string;
-}
   
 async function getPeopleIn({ initDate, finishDate }: DateRange): Promise<any> {
   try {
